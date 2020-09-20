@@ -66,9 +66,9 @@ defmodule Pacino.Parser do
   end
 
   def print() do
-    tokens = root("1 + 2 * 3 - 9")
-    ast = ast(tokens)
-    visit(ast)
+    root("1 + 2 * 3 - 9")
+    |> ast
+    |> visit
   end
 
   def visit(%{kind: "BinaryExpression", left: left, operator: operator, right: right}) do
